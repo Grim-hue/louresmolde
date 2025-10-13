@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dexcarte | Peças em Alumínio e Ferro | Póvoa de Santa Iria | Forte da Casa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap');
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://le-de.cdn-website.com/059fc5b8357243ce9d6bd08c80ff4475/dms3rep/multi/opt/IMAGE+1-624h.webp');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .gallery-item {
+            transition: all 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Cookie Consent Banner -->
+    <div id="cookieConsent" class="fixed bottom-0 left-0 right-0 bg-gray-800 text-white p-4 z-50 hidden">
+        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between">
+            <div class="mb-4 md:mb-0">
+                <h3 class="font-bold text-lg mb-2">Este site usa cookies</h3>
+                <p class="text-sm">Usamos cookies para personalizar conteúdo e anúncios, fornecer recursos de mídia social e analisar nosso tráfego.</p>
+            </div>
+            <div class="flex space-x-2">
+                <button id="cookieDeny" class="px-4 py-2 bg-gray-600 hover:bg-gray-700 rounded">Recusar</button>
+                <button id="cookieAccept" class="px-4 py-2 bg-yellow-600 hover:bg-yellow-700 rounded">Aceitar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-40">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <img src="https://le-de.cdn-website.com/059fc5b8357243ce9d6bd08c80ff4475/dms3rep/multi/opt/Dexcarte-Com%C3%A9rcio+De+Ferro+E+Constru%C3%A7%C3%B5es+Lda-222w.webp" alt="Dexcarte Logo" class="h-16">
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-800 hover:text-yellow-600 font-medium">Home</a>
+                    <a href="oqfazemos.html" class="text-gray-800 hover:text-yellow-600 font-medium">O que Fazemos</a>
+                    <a href="catalogos.html" class="text-gray-800 hover:text-yellow-600 font-medium">Catálogos</a>
+                    <a href="obras.html" class="text-gray-800 hover:text-yellow-600 font-medium">Obras</a>
+                    <a href="pedido_orcamento.html" class="text-gray-800 hover:text-yellow-600 font-medium">Pedido de Orçamentos</a>
+                    <a href="contactos.html" class="text-gray-800 hover:text-yellow-600 font-medium">Contactos</a>
+</div>
+                <div class="md:hidden">
+                    <button id="mobileMenuButton" class="text-gray-800">
+                        <i data-feather="menu"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden md:hidden bg-white shadow-lg absolute w-full z-30">
+        <div class="container mx-auto px-4 py-2">
+                    <a href="index.html" class="block py-2 text-gray-800 hover:text-yellow-600">Home</a>
+                    <a href="oqfazemos.html" class="block py-2 text-gray-800 hover:text-yellow-600">O que Fazemos</a>
+                    <a href="catalogos.html" class="block py-2 text-gray-800 hover:text-yellow-600">Catálogos</a>
+                    <a href="obras.html" class="block py-2 text-gray-800 hover:text-yellow-600">Obras</a>
+                    <a href="pedido_orcamento.html" class="block py-2 text-gray-800 hover:text-yellow-600">Pedido de Orçamentos</a>
+                    <a href="contactos.html" class="block py-2 text-gray-800 hover:text-yellow-600">Contactos</a>
+</div>
+    </div>
+    <!-- Hero Section -->
+    <section class="hero-section text-white py-24" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://de.cdn-website.com/059fc5b8357243ce9d6bd08c80ff4475/dms3rep/multi/BANNER+1.webp'); background-size: cover; background-position: center;">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 opacity-0">Dexcarte-Comércio de Ferro Forjado e Construções</h1>
+            <p class="text-xl md:text-2xl mb-8 opacity-0">Onde a resistência do ferro encontra a beleza do design</p>
+            <a href="#" class="inline-block bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300 opacity-0">Contacte-nos</a>
+        </div>
+    </section>
+<!-- Services Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Nossos Serviços</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Service Card 1 -->
+                <div class="service-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                    <img src="https://le-de.cdn-website.com/059fc5b8357243ce9d6bd08c80ff4475/dms3rep/multi/opt/image+6-1920w.webp" alt="Portões e Gradeamentos" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3">Fabrico de Portões e Gradeamentos</h3>
+                        <p class="text-gray-600 mb-4">Estruturas robustas e elegantes, adaptadas ao estilo e necessidades de cada cliente.</p>
+                        <a href="#" class="text-yellow-600 font-medium hover:text-yellow-700">Leia Mais <i data-feather="arrow-right" class="inline"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Service Card 2 -->
+                <div class="service-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                    <img src="https://le-de.cdn-website.com/059fc5b8357243ce9d6bd08c80ff4475/dms3rep/multi/opt/image+9-1920w.webp" alt="Escadas e Corrimões" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3">Escadas e Corrimões em Ferro</h3>
+                        <p class="text-gray-600 mb-4">Design seguro e sofisticado, ideal para interiores e exteriores.</p>
+                        <a href="#" class="text-yellow-600 font-medium hover:text-yellow-700">Leia Mais <i data-feather="arrow-right" class="inline"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Service Card 3 -->
+                <div class="service-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                    <img src="https://le-de.cdn-website.com/059fc5b8357243ce9d6bd08c80ff4475/dms3rep/multi/opt/image+2-1920w.webp" alt="Peças Artesanais" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3">Peças Artesanais em Ferro Forjado</h3>
+                        <p class="text-gray-600 mb-4">Criações únicas que valorizam qualquer espaço, com atenção ao detalhe e ao acabamento.</p>
+                        <a href="#" class="text-yellow-600 font-medium hover:text-yellow-700">Leia Mais <i data-feather="arrow-right" class="inline"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Service Card 4 -->
+                <div class="service-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                    <img src="https://le-de.cdn-website.com/059fc5b8357243ce9d6bd08c80ff4475/dms3rep/multi/opt/IMAGE+1-1920w.webp" alt="Estruturas Metálicas" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3">Estruturas Metálicas</h3>
+                        <p class="text-gray-600 mb-4">Projetos de pequeno e médio porte, concebidos com precisão e durabilidade.</p>
+                        <a href="#" class="text-yellow-600 font-medium hover:text-yellow-700">Leia Mais <i data-feather="arrow-right" class="inline"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-6">Personalize o seu projeto connosco</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Solicite o seu orçamento agora e dê vida às suas ideias com qualidade e profissionalismo.</p>
+            <a href="#" class="inline-block bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300">Contacte-nos!</a>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Por que nos escolher</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="bg-yellow-100 w-20 h-20 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <i data-feather="award" class="text-yellow-600 w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Experiência Comprovada</h3>
+                    <p class="text-gray-600">Mais de 20 anos de excelência em ferro forjado e construções metálicas</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-yellow-100 w-20 h-20 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <i data-feather="star" class="text-yellow-600 w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Qualidade e Personalização</h3>
+                    <p class="text-gray-600">Produtos feitos à medida, com materiais de alta qualidade.</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-yellow-100 w-20 h-20 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <i data-feather="tool" class="text-yellow-600 w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Tradição e Inovação</h3>
+                    <p class="text-gray-600">Aliamos o artesanato tradicional a técnicas modernas.</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-yellow-100 w-20 h-20 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <i data-feather="clock" class="text-yellow-600 w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Compromisso e Confiança</h3>
+                    <p class="text-gray-600">Projetos entregues com rigor, pontualidade e atenção ao detalhe.</p>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <a href="#" class="inline-block border-2 border-yellow-600 text-yellow-600 hover:bg-yellow-600 hover:text-white font-bold py-2 px-6 rounded-lg transition duration-300">Saiba mais sobre nós</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Alguns dos nossos projectos</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="gallery-item overflow-hidden rounded-lg shadow-md">
+                    <img src="https://le-de.cdn-website.com/059fc5b8357243ce9d6bd08c80ff4475/dms3rep/multi/opt/image+3-1920w.webp" alt="Project 1" class="w-full h-full object-cover">
+                </div>
+                <div class="gallery-item overflow-hidden rounded-lg shadow-md">
+                    <img src="https://le-de.cdn-website.com/059fc5b8357243ce9d6bd08c80ff4475/dms3rep/multi/opt/image+5-1920w.webp" alt="Project 2" class="w-full h-full object-cover">
+                </div>
+                <div class="gallery-item overflow-hidden rounded-lg shadow-md">
+                    <img src="https://le-de.cdn-website.com/059fc5b8357243ce9d6bd08c80ff4475/dms3rep/multi/opt/image+4-1920w.webp" alt="Project 3" class="w-full h-full object-cover">
+                </div>
+                <div class="gallery-item overflow-hidden rounded-lg shadow-md">
+                    <img src="https://le-de.cdn-website.com/059fc5b8357243ce9d6bd08c80ff4475/dms3rep/multi/opt/image+9-1920w.webp" alt="Project 4" class="w-full h-full object-cover">
+                </div>
+            </div>
+            <div class="text-center mt-8">
+                <a href="#" class="inline-block bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-2 px-6 rounded-lg transition duration-300">Ver Mais</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section class="py-16 bg-yellow-600 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-6">Faz o teu pedido orçamento!</h2>
+            <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8 mb-8">
+                <div class="flex items-center">
+                    <i data-feather="phone" class="mr-2"></i>
+                    <a href="tel:263859145" class="hover:underline">263859145</a>
+                    <span class="mx-2">/</span>
+                    <a href="tel:935770086" class="hover:underline">935770086</a>
+                </div>
+                <div class="flex items-center">
+                    <i data-feather="mail" class="mr-2"></i>
+                    <a href="mailto:dexcarte@gmail.com" class="hover:underline">dexcarte@gmail.com</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <img src="https://le-de.cdn-website.com/059fc5b8357243ce9d6bd08c80ff4475/dms3rep/multi/opt/Dexcarte-Com%C3%A9rcio+De+Ferro+E+Constru%C3%A7%C3%B5es+Lda-222w.webp" alt="Dexcarte Logo" class="h-16 mb-4">
+                    <div class="flex space-x-4 mb-6">
+                        <a href="#" class="hover:text-yellow-400"><i data-feather="facebook"></i></a>
+                        <a href="#"><img src="https://le-de.cdn-website.com/059fc5b8357243ce9d6bd08c80ff4475/dms3rep/multi/opt/Livro+3-120w.png" alt="Livro de Reclamações" class="h-6"></a>
+                    </div>
+                    <h4 class="text-lg font-bold mb-4">Serviços</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="hover:text-yellow-400">Home</a></li>
+                        <li><a href="oqfazemos.html" class="hover:text-yellow-400">O que Fazemos</a></li>
+                        <li><a href="catalogos.html" class="hover:text-yellow-400">Catálogos</a></li>
+<li><a href="obras.html" class="hover:text-yellow-400">Obras</a></li>
+<li><a href="pedido_orcamento.html" class="hover:text-yellow-400">Pedido de Orçamentos</a></li>
+                        <li><a href="contactos.html" class="hover:text-yellow-400">Contactos</a></li>
+</ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Onde estamos</h4>
+                    <address class="not-italic mb-6">
+                        <p class="mb-2">Quinta do Peixoto Carregado Park</p>
+                        <p class="mb-2">Armazém a Torre</p>
+                        <p class="mb-2">2580-512 Carregado</p>
+                        <a href="https://maps.app.goo.gl/mJbLnRNt2CqscvuL7" class="text-yellow-400 hover:underline">Ver no mapa</a>
+                    </address>
+                    <h4 class="text-lg font-bold mb-2">Horário:</h4>
+                    <p>Segunda a Sexta, das 09.00h às 13:00 e das 15:00 às 18.00h</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Contacte-nos</h4>
+                    <p class="mb-4">Para dúvidas ou questões contacte-nos:</p>
+                    <div class="mb-4">
+                        <a href="mailto:dexcarte@gmail.com" class="flex items-center hover:text-yellow-400 mb-2">
+                            <i data-feather="mail" class="mr-2"></i> dexcarte@gmail.com
+                        </a>
+                    </div>
+                    <h5 class="font-bold mb-2">Fale connosco:</h5>
+                    <div class="mb-2">
+                        <a href="tel:263859145" class="flex items-center hover:text-yellow-400">
+                            <i data-feather="phone" class="mr-2"></i> Telefone: 263859145 (Chamada para rede fixa nacional)
+                        </a>
+                    </div>
+                    <div class="mb-2">
+                        <a href="tel:935770086" class="flex items-center hover:text-yellow-400">
+                            <i data-feather="smartphone" class="mr-2"></i> Telemóvel: 935770086 (Chamada para rede móvel nacional)
+                        </a>
+                    </div>
+                    <div class="mb-2">
+                        <i data-feather="printer" class="inline mr-2"></i> Fax: 219593691
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-sm">
+                <div class="mb-4">
+                    <a href="#" class="hover:text-yellow-400 mr-4">Política de Privacidade</a>
+                    <a href="#" class="hover:text-yellow-400">Política de Cookies</a>
+                </div>
+                <p>© 2025 All rights reserved to Dexcarte-Comércio de Ferro Forjado e Construções – Powered by Páginas Amarelas</p>
+                <p class="mt-4 text-yellow-400">O nosso website utiliza cookies para melhorar e personalizar a sua experiência de navegação. <a href="#" class="underline">Saiba mais</a></p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // GSAP Animations
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Page fade-in transition
+        gsap.from("body", {
+            duration: 0.8,
+            opacity: 0,
+            ease: "power2.inOut"
+        });
+
+        // Hero section animation
+        gsap.from(".hero-section h1", {
+            duration: 1,
+            y: 50,
+            opacity: 0,
+            ease: "power3.out",
+            delay: 0.2
+        });
+
+        gsap.from(".hero-section p", {
+            duration: 1,
+            y: 50,
+            opacity: 0,
+            ease: "power3.out",
+            delay: 0.4
+        });
+
+        gsap.from(".hero-section a", {
+            duration: 1,
+            y: 50,
+            opacity: 0,
+            ease: "power3.out",
+            delay: 0.6
+        });
+// Service cards animation
+        gsap.utils.toArray(".service-card").forEach(card => {
+            gsap.from(card, {
+                scrollTrigger: {
+                    trigger: card,
+                    start: "top 80%",
+                    toggleActions: "play none none none"
+                },
+                y: 50,
+                opacity: 0,
+                duration: 0.8,
+                stagger: 0.2
+            });
+        });
+
+        // Why choose us animation
+        gsap.utils.toArray(".why-choose-us .text-center").forEach(item => {
+            gsap.from(item, {
+                scrollTrigger: {
+                    trigger: item,
+                    start: "top 80%",
+                    toggleActions: "play none none none"
+                },
+                y: 30,
+                opacity: 0,
+                duration: 0.8,
+                stagger: 0.1
+            });
+        });
+
+        // Gallery animation
+        gsap.utils.toArray(".gallery-item").forEach(item => {
+            gsap.from(item, {
+                scrollTrigger: {
+                    trigger: item,
+                    start: "top 80%",
+                    toggleActions: "play none none none"
+                },
+                scale: 0.9,
+                opacity: 0,
+                duration: 0.6,
+                stagger: 0.1
+            });
+        });
+
+        // CTA section animation
+        gsap.from(".bg-yellow-600", {
+            scrollTrigger: {
+                trigger: ".bg-yellow-600",
+                start: "top 80%",
+                toggleActions: "play none none none"
+            },
+            y: 30,
+            opacity: 0,
+            duration: 0.8
+        });
+
+        // Mobile menu toggle
+const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            feather.replace();
+        });
+        
+        // Cookie consent
+        const cookieConsent = document.getElementById('cookieConsent');
+        const cookieAccept = document.getElementById('cookieAccept');
+        const cookieDeny = document.getElementById('cookieDeny');
+        
+        if (!localStorage.getItem('cookieConsent')) {
+            cookieConsent.classList.remove('hidden');
+        }
+        
+        cookieAccept.addEventListener('click', () => {
+            localStorage.setItem('cookieConsent', 'accepted');
+            cookieConsent.classList.add('hidden');
+        });
+        
+        cookieDeny.addEventListener('click', () => {
+            localStorage.setItem('cookieConsent', 'denied');
+            cookieConsent.classList.add('hidden');
+        });
+        // Initialize feather icons and GSAP
+        document.addEventListener('DOMContentLoaded', () => {
+            feather.replace();
+            gsap.set(".hero-section h1, .hero-section p, .hero-section a", { opacity: 1 });
+            
+            // Animate navigation items sequentially
+            gsap.from("nav a", {
+                duration: 0.6,
+                y: -20,
+                opacity: 0,
+                stagger: 0.1,
+                ease: "back.out"
+            });
+            
+            // Smooth reveal for footer
+            gsap.from("footer", {
+                scrollTrigger: {
+                    trigger: "footer",
+                    start: "top bottom",
+                    toggleActions: "play none none none"
+                },
+                duration: 1,
+                opacity: 0,
+                y: 50,
+                ease: "power2.out"
+            });
+        });
+</script>
+</body>
+</html>
