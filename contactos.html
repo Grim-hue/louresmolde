@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contactos | Dexcarte</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/site_favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="images/site_favicon.ico">
+    <link rel="apple-touch-icon" href="images/logo-dexcarte.png">
+    <meta name="theme-color" content="#d97706">
     <!-- Material Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -19,8 +25,18 @@
             font-family: 'Playfair Display', serif;
         }
         
+        /* Standard Navigation Styles */
         .nav-link {
             position: relative;
+            transition: all 0.3s ease;
+            outline: none;
+            border: none;
+        }
+        
+        .nav-link:focus {
+            outline: none;
+            border: none;
+            box-shadow: none;
         }
         
         .nav-link::after {
@@ -34,12 +50,13 @@
             transition: width 0.3s ease;
         }
         
-        .nav-link:hover::after {
+        .nav-link:hover::after,
+        .nav-link.active::after {
             width: 100%;
         }
         
-        .nav-link.active::after {
-            width: 100%;
+        .nav-link.active {
+            color: #d97706;
         }
         
         .contact-card {
@@ -68,9 +85,9 @@
     <nav class="bg-white shadow-lg sticky top-0 z-40">
         <div class="container mx-auto px-4">
             <div class="flex justify-between items-center py-4">
-                <div class="flex items-center">
-                    <img src="images/logo-dexcarte.webp" alt="Dexcarte Logo" class="h-16">
-                </div>
+                <a href="index.html" class="flex items-center focus:outline-none">
+                    <img src="images/logo-dexcarte.png" alt="Dexcarte Logo" class="h-16">
+                </a>
                 <div class="hidden md:flex space-x-8">
                     <a href="index.html" class="nav-link text-gray-800 font-medium">Home</a>
                     <a href="oqfazemos.html" class="nav-link text-gray-800 font-medium">O que Fazemos</a>
@@ -80,8 +97,9 @@
                     <a href="contactos.html" class="nav-link active text-yellow-600 font-medium">Contactos</a>
                 </div>
                 <div class="md:hidden">
-                    <button id="mobileMenuButton" class="text-gray-800">
-                        <span class="material-icons">menu</span>
+                    <button id="mobileMenuButton" class="text-gray-800 focus:outline-none" aria-expanded="false" aria-controls="mobileMenu">
+                        <span class="material-icons" aria-hidden="true">menu</span>
+                        <span class="sr-only">Abrir menu</span>
                     </button>
                 </div>
             </div>
@@ -91,12 +109,12 @@
     <!-- Mobile Menu -->
     <div id="mobileMenu" class="hidden md:hidden bg-white shadow-lg absolute w-full z-30">
         <div class="container mx-auto px-4 py-2">
-            <a href="index.html" class="block py-2 text-gray-800 hover:text-yellow-600">Home</a>
-            <a href="oqfazemos.html" class="block py-2 text-gray-800 hover:text-yellow-600">O que Fazemos</a>
-            <a href="catalogos.html" class="block py-2 text-gray-800 hover:text-yellow-600">Catálogos</a>
-            <a href="obras.html" class="block py-2 text-gray-800 hover:text-yellow-600">Obras</a>
-            <a href="pedido_orcamento.html" class="block py-2 text-gray-800 hover:text-yellow-600">Pedido de Orçamentos</a>
-            <a href="contactos.html" class="block py-2 text-yellow-600">Contactos</a>
+            <a href="index.html" class="block py-2 text-gray-800 transition-colors">Home</a>
+            <a href="oqfazemos.html" class="block py-2 text-gray-800 transition-colors">O que Fazemos</a>
+            <a href="catalogos.html" class="block py-2 text-gray-800 transition-colors">Catálogos</a>
+            <a href="obras.html" class="block py-2 text-gray-800 transition-colors">Obras</a>
+            <a href="pedido_orcamento.html" class="block py-2 text-gray-800 transition-colors">Pedido de Orçamentos</a>
+            <a href="contactos.html" class="block py-2 text-yellow-600 font-medium">Contactos</a>
         </div>
     </div>
 
@@ -120,7 +138,6 @@
                         <h2 class="text-3xl font-bold mb-4">Informações de Contacto</h2>
                         <p class="text-gray-600">Estamos disponíveis para esclarecer qualquer dúvida sobre os nossos serviços em ferro forjado e construções metálicas.</p>
                     </div>
-                    
                     <div class="space-y-6">
                         <!-- Address Card -->
                         <div class="contact-card bg-gray-50 p-6 rounded-lg">
@@ -216,12 +233,14 @@
                         <h2 class="text-3xl font-bold mb-6 text-center lg:text-left">Encontre-nos</h2>
                         <div class="rounded-lg overflow-hidden shadow-md">
                             <iframe 
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3113.029516683065!2d-9.003869423995922!3d38.71528317172763!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd1933c9d2b8c41f%3A0x3a2a0a9b0a8b8b8b!2sDexcarte-Com%C3%A9rcio%20de%20Ferro%20e%20Constru%C3%A7%C3%B5es%20Lda!5e0!3m2!1sen!2spt!4v1620000000000!5m2!1sen!2spt" 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3097.8746543187043!2d-8.969695167714687!3d39.034126200000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd192f27579f5137%3A0x577e7249aad105b0!2sDexcarte-Com%C3%A9rcio%20de%20Ferro%20Forjado%20e%20Constru%C3%A7%C3%B5es%20Lda!5e0!3m2!1spt!2spt!4v1634567890123!5m2!1spt!2spt" 
                                 width="100%" 
                                 height="400" 
                                 style="border:0;" 
                                 allowfullscreen="" 
                                 loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"
+                                title="Localização da Dexcarte"
                                 class="w-full">
                             </iframe>
                         </div>
@@ -276,7 +295,7 @@
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div>
-                    <img src="images/logo-dexcarte.webp" alt="Dexcarte Logo" class="h-16 mb-4">
+                    <img src="images/logo-dexcarte.png" alt="Dexcarte Logo" class="h-16 mb-4">
                     <div class="flex space-x-4 mb-6">
                         <a href="https://facebook.com" target="_blank" class="hover:text-yellow-400"><span class="material-icons">facebook</span></a>
                         <a href="https://www.livroreclamacoes.pt" target="_blank"><img src="images/livro-reclamacoes.png" alt="Livro de Reclamações" class="h-6"></a>

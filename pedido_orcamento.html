@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pedido de Orçamento | Dexcarte</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/site_favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="images/site_favicon.ico">
+    <link rel="apple-touch-icon" href="images/logo-dexcarte.png">
+    <meta name="theme-color" content="#d97706">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/feather-icons"></script>
     <style>
@@ -20,6 +26,40 @@
         .hero-pattern {
             background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
         }
+        
+        /* Standard Navigation Styles */
+        .nav-link {
+            position: relative;
+            transition: all 0.3s ease;
+            outline: none;
+            border: none;
+        }
+        
+        .nav-link:focus {
+            outline: none;
+            border: none;
+            box-shadow: none;
+        }
+        
+        .nav-link::after {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #d97706;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+        
+        .nav-link.active {
+            color: #d97706;
+        }
     </style>
 </head>
 <body class="bg-gray-50">
@@ -27,20 +67,21 @@
     <nav class="bg-white shadow-lg sticky top-0 z-40">
         <div class="container mx-auto px-4">
             <div class="flex justify-between items-center py-4">
-                <div class="flex items-center">
-                    <img src="images/logo-dexcarte.webp" alt="Dexcarte Logo" class="h-16">
-                </div>
+                <a href="index.html" class="flex items-center focus:outline-none">
+                    <img src="images/logo-dexcarte.png" alt="Dexcarte Logo" class="h-16">
+                </a>
                 <div class="hidden md:flex space-x-8">
-                    <a href="index.html" class="text-gray-800 hover:text-yellow-600 font-medium">Home</a>
-                    <a href="oqfazemos.html" class="text-gray-800 hover:text-yellow-600 font-medium">O que Fazemos</a>
-                    <a href="catalogos.html" class="text-gray-800 hover:text-yellow-600 font-medium">Catálogos</a>
-                    <a href="obras.html" class="text-gray-800 hover:text-yellow-600 font-medium">Obras</a>
-                    <a href="pedido_orcamento.html" class="text-yellow-600 font-medium">Pedido de Orçamentos</a>
-                    <a href="contactos.html" class="text-gray-800 hover:text-yellow-600 font-medium">Contactos</a>
+                    <a href="index.html" class="nav-link text-gray-800 font-medium">Home</a>
+                    <a href="oqfazemos.html" class="nav-link text-gray-800 font-medium">O que Fazemos</a>
+                    <a href="catalogos.html" class="nav-link text-gray-800 font-medium">Catálogos</a>
+                    <a href="obras.html" class="nav-link text-gray-800 font-medium">Obras</a>
+                    <a href="pedido_orcamento.html" class="nav-link active text-yellow-600 font-medium">Pedido de Orçamentos</a>
+                    <a href="contactos.html" class="nav-link text-gray-800 font-medium">Contactos</a>
                 </div>
                 <div class="md:hidden">
-                    <button id="mobileMenuButton" class="text-gray-800">
-                        <i data-feather="menu"></i>
+                    <button id="mobileMenuButton" class="text-gray-800 focus:outline-none" aria-expanded="false" aria-controls="mobileMenu">
+                        <i data-feather="menu" aria-hidden="true"></i>
+                        <span class="sr-only">Abrir menu</span>
                     </button>
                 </div>
             </div>
@@ -50,12 +91,12 @@
     <!-- Mobile Menu -->
     <div id="mobileMenu" class="hidden md:hidden bg-white shadow-lg absolute w-full z-30">
         <div class="container mx-auto px-4 py-2">
-            <a href="index.html" class="block py-2 text-gray-800 hover:text-yellow-600">Home</a>
-            <a href="oqfazemos.html" class="block py-2 text-gray-800 hover:text-yellow-600">O que Fazemos</a>
-            <a href="catalogos.html" class="block py-2 text-gray-800 hover:text-yellow-600">Catálogos</a>
-            <a href="obras.html" class="block py-2 text-gray-800 hover:text-yellow-600">Obras</a>
-            <a href="pedido_orcamento.html" class="block py-2 text-yellow-600">Pedido de Orçamentos</a>
-            <a href="contactos.html" class="block py-2 text-gray-800 hover:text-yellow-600">Contactos</a>
+            <a href="index.html" class="block py-2 text-gray-800 transition-colors">Home</a>
+            <a href="oqfazemos.html" class="block py-2 text-gray-800 transition-colors">O que Fazemos</a>
+            <a href="catalogos.html" class="block py-2 text-gray-800 transition-colors">Catálogos</a>
+            <a href="obras.html" class="block py-2 text-gray-800 transition-colors">Obras</a>
+            <a href="pedido_orcamento.html" class="block py-2 text-yellow-600 font-medium">Pedido de Orçamentos</a>
+            <a href="contactos.html" class="block py-2 text-gray-800 transition-colors">Contactos</a>
         </div>
     </div>
 
@@ -130,7 +171,7 @@
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div>
-                    <img src="images/logo-dexcarte.webp" alt="Dexcarte Logo" class="h-16 mb-4">
+                    <img src="images/logo-dexcarte.png" alt="Dexcarte Logo" class="h-16 mb-4">
                     <div class="flex space-x-4 mb-6">
                         <a href="https://facebook.com" target="_blank" class="hover:text-yellow-400"><i data-feather="facebook"></i></a>
                         <a href="https://www.livroreclamacoes.pt" target="_blank"><img src="images/livro-reclamacoes.png" alt="Livro de Reclamações" class="h-6"></a>

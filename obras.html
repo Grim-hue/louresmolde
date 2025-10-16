@@ -5,8 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nossas Obras | Dexcarte</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/site_favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="images/site_favicon.ico">
+    <link rel="apple-touch-icon" href="images/logo-dexcarte.png">
+    <meta name="theme-color" content="#d97706">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/feather-icons"></script>
+    <!-- GSAP and ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap');
 
@@ -37,6 +46,72 @@
         .hero-pattern {
             background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
         }
+        
+        /* Standard Navigation Styles */
+        .nav-link {
+            position: relative;
+            transition: all 0.3s ease;
+            outline: none;
+            border: none;
+        }
+        
+        .nav-link:focus {
+            outline: none;
+            border: none;
+            box-shadow: none;
+        }
+        
+        .nav-link::after {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #d97706;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+        
+        .nav-link.active {
+            color: #d97706;
+        }
+        
+        /* Parallax Banner Styles */
+        .banner-parallax {
+            min-height: 80vh;
+            background-image: url('images/banner hero 2-2880w.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center center;
+            background-repeat: no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .banner-parallax__title {
+            font-size: clamp(2rem, 4vw + 1rem, 4rem);
+            font-family: 'Playfair Display', serif;
+        }
+        
+        @media (max-width: 768px) {
+            .banner-parallax {
+                min-height: 60vh;
+                background-attachment: scroll;
+            }
+        }
+        
+        /* Disable parallax on iOS devices for better performance */
+        @media (max-width: 768px) and (-webkit-min-device-pixel-ratio: 2) {
+            .banner-parallax {
+                background-attachment: scroll;
+            }
+        }
     </style>
 </head>
 
@@ -45,21 +120,21 @@
     <nav class="bg-white shadow-lg sticky top-0 z-40">
         <div class="container mx-auto px-4">
             <div class="flex justify-between items-center py-4">
-                <div class="flex items-center">
-                    <img src="images/logo-dexcarte.webp" alt="Dexcarte Logo" class="h-16">
-                </div>
+                <a href="index.html" class="flex items-center focus:outline-none">
+                    <img src="images/logo-dexcarte.png" alt="Dexcarte Logo" class="h-16">
+                </a>
                 <div class="hidden md:flex space-x-8">
-                    <a href="index.html" class="text-gray-800 hover:text-yellow-600 font-medium">Home</a>
-                    <a href="oqfazemos.html" class="text-gray-800 hover:text-yellow-600 font-medium">O que Fazemos</a>
-                    <a href="catalogos.html" class="text-gray-800 hover:text-yellow-600 font-medium">Catálogos</a>
-                    <a href="obras.html" class="text-yellow-600 font-medium">Obras</a>
-                    <a href="pedido_orcamento.html" class="text-gray-800 hover:text-yellow-600 font-medium">Pedido de
-                        Orçamentos</a>
-                    <a href="contactos.html" class="text-gray-800 hover:text-yellow-600 font-medium">Contactos</a>
+                    <a href="index.html" class="nav-link text-gray-800 font-medium">Home</a>
+                    <a href="oqfazemos.html" class="nav-link text-gray-800 font-medium">O que Fazemos</a>
+                    <a href="catalogos.html" class="nav-link text-gray-800 font-medium">Catálogos</a>
+                    <a href="obras.html" class="nav-link active text-yellow-600 font-medium">Obras</a>
+                    <a href="pedido_orcamento.html" class="nav-link text-gray-800 font-medium">Pedido de Orçamentos</a>
+                    <a href="contactos.html" class="nav-link text-gray-800 font-medium">Contactos</a>
                 </div>
                 <div class="md:hidden">
-                    <button id="mobileMenuButton" class="text-gray-800">
-                        <i data-feather="menu"></i>
+                    <button id="mobileMenuButton" class="text-gray-800 focus:outline-none" aria-expanded="false" aria-controls="mobileMenu">
+                        <i data-feather="menu" aria-hidden="true"></i>
+                        <span class="sr-only">Abrir menu</span>
                     </button>
                 </div>
             </div>
@@ -69,21 +144,50 @@
     <!-- Mobile Menu -->
     <div id="mobileMenu" class="hidden md:hidden bg-white shadow-lg absolute w-full z-30">
         <div class="container mx-auto px-4 py-2">
-            <a href="index.html" class="block py-2 text-gray-800 hover:text-yellow-600">Home</a>
-            <a href="oqfazemos.html" class="block py-2 text-gray-800 hover:text-yellow-600">O que Fazemos</a>
-            <a href="catalogos.html" class="block py-2 text-gray-800 hover:text-yellow-600">Catálogos</a>
-            <a href="obras.html" class="block py-2 text-yellow-600">Obras</a>
-            <a href="pedido_orcamento.html" class="block py-2 text-gray-800 hover:text-yellow-600">Pedido de
-                Orçamentos</a>
-            <a href="contactos.html" class="block py-2 text-gray-800 hover:text-yellow-600">Contactos</a>
+            <a href="index.html" class="block py-2 text-gray-800 transition-colors">Home</a>
+            <a href="oqfazemos.html" class="block py-2 text-gray-800 transition-colors">O que Fazemos</a>
+            <a href="catalogos.html" class="block py-2 text-gray-800 transition-colors">Catálogos</a>
+            <a href="obras.html" class="block py-2 text-yellow-600 font-medium">Obras</a>
+            <a href="pedido_orcamento.html" class="block py-2 text-gray-800 transition-colors">Pedido de Orçamentos</a>
+            <a href="contactos.html" class="block py-2 text-gray-800 transition-colors">Contactos</a>
         </div>
     </div>
 
-    <!-- Hero Section -->
+    <!-- Hero Section with Parallax Banner -->
+    <section class="banner-parallax relative overflow-hidden" aria-label="Banner principal - Nossas Obras">
+        <div class="banner-parallax__overlay absolute inset-0 bg-black bg-opacity-40"></div>
+        <div class="banner-parallax__inner relative z-10 container mx-auto px-4 py-24 text-center">
+            <h1 class="banner-parallax__title text-5xl md:text-6xl font-bold text-white mb-6">Nossas Obras</h1>
+            <p class="text-xl md:text-2xl text-white max-w-3xl mx-auto mb-8">Alguns dos nossos trabalhos realizados com qualidade e dedicação</p>
+            <p class="text-lg text-white max-w-2xl mx-auto opacity-90">Mais de 20 anos criando peças únicas em ferro forjado</p>
+        </div>
+    </section>
+
+    <!-- Additional Hero Section -->
     <section class="bg-yellow-700 text-white py-20 hero-pattern">
         <div class="container mx-auto px-4 text-center">
-            <h1 class="text-4xl md:text-5xl font-bold mb-4">Nossas Obras</h1>
-            <p class="text-xl max-w-3xl mx-auto">Alguns dos nossos trabalhos realizados com qualidade e dedicação</p>
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Nosso Compromisso com a Qualidade</h2>
+            <p class="text-xl max-w-3xl mx-auto mb-8">Cada projeto é desenvolvido com a máxima atenção aos detalhes, utilizando técnicas tradicionais e materiais de primeira qualidade.</p>
+            <div class="flex flex-wrap justify-center gap-8 mt-8">
+                <div class="text-center">
+                    <div class="text-3xl font-bold mb-2">
+                        <span class="counter" data-target="20">0</span>+
+                    </div>
+                    <div class="text-lg">Anos de Experiência</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-bold mb-2">
+                        <span class="counter" data-target="500">0</span>+
+                    </div>
+                    <div class="text-lg">Projetos Concluídos</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-bold mb-2">
+                        <span class="counter" data-target="100">0</span>%
+                    </div>
+                    <div class="text-lg">Satisfação do Cliente</div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -319,7 +423,7 @@
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div>
-                    <img src="images/logo-dexcarte.webp"
+                    <img src="images/logo-dexcarte.png"
                         alt="Dexcarte Logo" class="h-16 mb-4">
                     <div class="flex space-x-4 mb-6">
                         <a href="#" class="hover:text-yellow-400"><i data-feather="facebook"></i></a>
@@ -419,9 +523,81 @@
             });
         });
 
-        // Initialize feather icons
+        // Initialize GSAP and parallax effect
         document.addEventListener('DOMContentLoaded', () => {
             feather.replace();
+            
+            // Register GSAP ScrollTrigger
+            gsap.registerPlugin(ScrollTrigger);
+            
+            // Parallax effect for the banner
+            gsap.to(".banner-parallax", {
+                backgroundPositionY: "-30%",
+                ease: "none",
+                scrollTrigger: {
+                    trigger: ".banner-parallax",
+                    start: "top bottom",
+                    end: "bottom top",
+                    scrub: true
+                }
+            });
+            
+            // Fade in animation for banner content
+            gsap.from(".banner-parallax__inner", {
+                opacity: 0,
+                y: 50,
+                duration: 1.2,
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger: ".banner-parallax",
+                    start: "top 80%",
+                    toggleActions: "play none none none"
+                }
+            });
+            
+            // Counter animation function
+            function animateCounter(element, target, duration = 2000) {
+                let start = 0;
+                let startTime = null;
+                
+                function updateCounter(timestamp) {
+                    if (!startTime) startTime = timestamp;
+                    const progress = (timestamp - startTime) / duration;
+                    
+                    if (progress < 1) {
+                        const current = Math.floor(start + (target - start) * easeOutQuart(progress));
+                        element.textContent = current;
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        element.textContent = target;
+                    }
+                }
+                
+                requestAnimationFrame(updateCounter);
+            }
+            
+            // Easing function for smooth animation
+            function easeOutQuart(t) {
+                return 1 - Math.pow(1 - t, 4);
+            }
+            
+            // Trigger counter animations when stats section comes into view
+            const statsSection = document.querySelector('.bg-yellow-700');
+            const counters = document.querySelectorAll('.counter');
+            
+            if (counters.length > 0) {
+                ScrollTrigger.create({
+                    trigger: statsSection,
+                    start: "top 80%",
+                    onEnter: () => {
+                        counters.forEach(counter => {
+                            const target = parseInt(counter.dataset.target);
+                            animateCounter(counter, target, 2500);
+                        });
+                    },
+                    once: true
+                });
+            }
         });
     </script>
 </body>
