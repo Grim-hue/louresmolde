@@ -9,8 +9,8 @@
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="images/site_favicon.ico">
     <link rel="shortcut icon" type="image/x-icon" href="images/site_favicon.ico">
-    <link rel="apple-touch-icon" href="images/logo-louresmolde.png">
-    <meta name="theme-color" content="#d97706">
+    <link rel="apple-touch-icon" href="images/logo-louresmolde.svg">
+    <meta name="theme-color" content="#1e3a8a">
     
     <!-- Preload critical resources -->
     <link rel="preload" href="https://cdn.tailwindcss.com" as="style">
@@ -28,8 +28,9 @@
     
     <style>
         :root {
-            --primary-color: #d97706;
-            --primary-dark: #b45309;
+            --primary-color: #1e3a8a;
+            --primary-dark: #1e40af;
+            --secondary-color: #d4af37;
             --text-dark: #1f2937;
             --text-light: #6b7280;
             --bg-light: #f9fafb;
@@ -236,7 +237,7 @@
 </head>
 <body class="bg-gray-50">
     <!-- Skip to main content for accessibility -->
-    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-yellow-600 text-white p-2 z-50">Saltar para o conteúdo principal</a>
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-blue-600 text-white p-2 z-50">Saltar para o conteúdo principal</a>
     
     <!-- Cookie Consent Banner -->
     <div id="cookieConsent" class="fixed bottom-0 left-0 right-0 bg-gray-800 text-white p-4 z-50 hidden transform transition-transform duration-300 translate-y-full">
@@ -247,7 +248,7 @@
             </div>
             <div class="flex space-x-2">
                 <button id="cookieDeny" class="px-4 py-2 bg-gray-600 hover:bg-gray-700 rounded transition-colors">Recusar</button>
-                <button id="cookieAccept" class="px-4 py-2 bg-yellow-600 hover:bg-yellow-700 rounded transition-colors">Aceitar</button>
+                <button id="cookieAccept" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded transition-colors">Aceitar</button>
             </div>
         </div>
     </div>
@@ -257,7 +258,7 @@
         <div class="container mx-auto px-4">
             <div class="flex justify-between items-center py-4">
                 <div class="flex items-center">
-                    <img src="images/logo-louresmolde.png" alt="Louresmolde Logo" class="h-16">
+                    <img src="images/logo-louresmolde.svg" alt="Louresmolde Logo" class="h-16">
                 </div>
                 <div class="hidden md:flex space-x-8">
                     <a href="index.html" class="nav-link active text-white font-medium">Início</a>
@@ -279,11 +280,11 @@
     <!-- Mobile Menu -->
     <div id="mobileMenu" class="hidden md:hidden mobile-glass-menu shadow-lg absolute w-full z-30 transform transition-transform duration-300 -translate-y-full">
         <div class="container mx-auto px-4 py-2">
-            <a href="index.html" class="block py-2 text-yellow-600 font-medium">Início</a>
-            <a href="conheca-a-louresmolde.html" class="block py-2 text-gray-800 hover:text-yellow-600 transition-colors">Conheça a Louresmolde</a>
-            <a href="o-que-fazemos.html" class="block py-2 text-gray-800 hover:text-yellow-600 transition-colors">O que fazemos</a>
-            <a href="trabalhos-realizados.html" class="block py-2 text-gray-800 hover:text-yellow-600 transition-colors">Trabalhos realizados</a>
-            <a href="contactos.html" class="block py-2 text-gray-800 hover:text-yellow-600 transition-colors">Contactos</a>
+            <a href="index.html" class="block py-2 text-blue-600 font-medium">Início</a>
+            <a href="conheca-a-louresmolde.html" class="block py-2 text-gray-800 hover:text-blue-600 transition-colors">Conheça a Louresmolde</a>
+            <a href="o-que-fazemos.html" class="block py-2 text-gray-800 hover:text-blue-600 transition-colors">O que fazemos</a>
+            <a href="trabalhos-realizados.html" class="block py-2 text-gray-800 hover:text-blue-600 transition-colors">Trabalhos realizados</a>
+            <a href="contactos.html" class="block py-2 text-gray-800 hover:text-blue-600 transition-colors">Contactos</a>
         </div>
     </div>
 
@@ -294,7 +295,7 @@
             <div class="hero-banner-parallax__inner relative z-10 container mx-auto px-4 py-24 text-center">
                 <h1 class="hero-banner-parallax__title text-4xl md:text-6xl font-bold text-white mb-6">Louresmolde - Construções Metálicas</h1>
                 <p class="text-xl md:text-2xl text-white mb-8">A Louresmolde é uma empresa especializada na concepção, fabrico e montagem de estruturas metálicas de pequeno e médio porte, em ferro, alumínio e inox, com 18 anos de experiência.</p>
-                <a href="contactos.html" class="inline-flex items-center bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-4 px-8 rounded-lg transition duration-300">
+                <a href="contactos.html" class="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition duration-300">
                     <span>Contacte-nos</span>
                     <span class="material-icons ml-2" aria-hidden="true">arrow_forward</span>
                 </a>
@@ -315,7 +316,7 @@
                         <div class="p-6">
                             <h3 class="text-xl font-bold mb-3">Moldes para Automóveis</h3>
                             <p class="text-gray-600 mb-4">A nossa principal actividade é no fabrico de moldes para automóveis, com precisão e qualidade.</p>
-                            <a href="o-que-fazemos.html" class="inline-flex items-center text-yellow-600 font-medium hover:text-yellow-700 transition-colors">
+                            <a href="o-que-fazemos.html" class="inline-flex items-center text-blue-600 font-medium hover:text-blue-700 transition-colors">
                                 <span>Leia Mais</span>
                                 <span class="material-icons ml-1 text-sm" aria-hidden="true">arrow_forward</span>
                             </a>
@@ -328,7 +329,7 @@
                         <div class="p-6">
                             <h3 class="text-xl font-bold mb-3">Contentores Metálicos</h3>
                             <p class="text-gray-600 mb-4">Contentores metálicos robustos e funcionais para diversas aplicações industriais.</p>
-                            <a href="o-que-fazemos.html" class="inline-flex items-center text-yellow-600 font-medium hover:text-yellow-700 transition-colors">
+                            <a href="o-que-fazemos.html" class="inline-flex items-center text-blue-600 font-medium hover:text-blue-700 transition-colors">
                                 <span>Leia Mais</span>
                                 <span class="material-icons ml-1 text-sm" aria-hidden="true">arrow_forward</span>
                             </a>
@@ -341,7 +342,7 @@
                         <div class="p-6">
                             <h3 class="text-xl font-bold mb-3">Portões</h3>
                             <p class="text-gray-600 mb-4">Portões de correr, batente e automatizados, fabricados em ferro, alumínio e inox.</p>
-                            <a href="o-que-fazemos.html" class="inline-flex items-center text-yellow-600 font-medium hover:text-yellow-700 transition-colors">
+                            <a href="o-que-fazemos.html" class="inline-flex items-center text-blue-600 font-medium hover:text-blue-700 transition-colors">
                                 <span>Leia Mais</span>
                                 <span class="material-icons ml-1 text-sm" aria-hidden="true">arrow_forward</span>
                             </a>
@@ -354,7 +355,7 @@
                         <div class="p-6">
                             <h3 class="text-xl font-bold mb-3">Gradeamentos e Escadas</h3>
                             <p class="text-gray-600 mb-4">Gradeamentos, guardas e escadas metálicas para interiores e exteriores com segurança e design.</p>
-                            <a href="o-que-fazemos.html" class="inline-flex items-center text-yellow-600 font-medium hover:text-yellow-700 transition-colors">
+                            <a href="o-que-fazemos.html" class="inline-flex items-center text-blue-600 font-medium hover:text-blue-700 transition-colors">
                                 <span>Leia Mais</span>
                                 <span class="material-icons ml-1 text-sm" aria-hidden="true">arrow_forward</span>
                             </a>
@@ -369,7 +370,7 @@
             <div class="container mx-auto px-4 text-center">
                 <h2 id="cta-heading" class="text-3xl font-bold mb-6">Personalize o seu projeto connosco</h2>
                 <p class="text-xl mb-8 max-w-2xl mx-auto">Solicite o seu orçamento agora e dê vida às suas ideias com qualidade e profissionalismo.</p>
-                <a href="pedido_orcamento.html" class="inline-flex items-center bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300">
+                <a href="contactos.html" class="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300">
                     <span>Contacte-nos!</span>
                     <span class="material-icons ml-2" aria-hidden="true">arrow_forward</span>
                 </a>
@@ -385,36 +386,36 @@
                 </div>
                 <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                     <div class="feature-card text-center">
-                        <div class="bg-yellow-100 w-20 h-20 mx-auto rounded-full flex items-center justify-center mb-4">
-                            <span class="material-icons text-yellow-600 text-3xl" aria-hidden="true">emoji_events</span>
+                        <div class="bg-blue-100 w-20 h-20 mx-auto rounded-full flex items-center justify-center mb-4">
+                            <span class="material-icons text-blue-600 text-3xl" aria-hidden="true">emoji_events</span>
                         </div>
                         <h3 class="text-xl font-bold mb-2">Qualidade</h3>
                         <p class="text-gray-600">Garantimos rigor nas especificações, prazos e acabamentos, desde a concepção à montagem.</p>
                     </div>
                     <div class="feature-card text-center">
-                        <div class="bg-yellow-100 w-20 h-20 mx-auto rounded-full flex items-center justify-center mb-4">
-                            <span class="material-icons text-yellow-600 text-3xl" aria-hidden="true">star</span>
+                        <div class="bg-blue-100 w-20 h-20 mx-auto rounded-full flex items-center justify-center mb-4">
+                            <span class="material-icons text-blue-600 text-3xl" aria-hidden="true">star</span>
                         </div>
                         <h3 class="text-xl font-bold mb-2">Competência</h3>
                         <p class="text-gray-600">Equipa experiente com 18 anos de prática em ferro, alumínio e inox, focada na segurança e durabilidade.</p>
                     </div>
                     <div class="feature-card text-center">
-                        <div class="bg-yellow-100 w-20 h-20 mx-auto rounded-full flex items-center justify-center mb-4">
-                            <span class="material-icons text-yellow-600 text-3xl" aria-hidden="true">build</span>
+                        <div class="bg-blue-100 w-20 h-20 mx-auto rounded-full flex items-center justify-center mb-4">
+                            <span class="material-icons text-blue-600 text-3xl" aria-hidden="true">build</span>
                         </div>
                         <h3 class="text-xl font-bold mb-2">Inovação</h3>
                         <p class="text-gray-600">Apostamos em processos, materiais e soluções técnicas que aumentam a eficiência e o desempenho.</p>
                     </div>
                     <div class="feature-card text-center">
-                        <div class="bg-yellow-100 w-20 h-20 mx-auto rounded-full flex items-center justify-center mb-4">
-                            <span class="material-icons text-yellow-600 text-3xl" aria-hidden="true">schedule</span>
+                        <div class="bg-blue-100 w-20 h-20 mx-auto rounded-full flex items-center justify-center mb-4">
+                            <span class="material-icons text-blue-600 text-3xl" aria-hidden="true">schedule</span>
                         </div>
                         <h3 class="text-xl font-bold mb-2">Experiência</h3>
                         <p class="text-gray-600">18 anos de excelência na concepção, fabrico e montagem de estruturas metálicas.</p>
                     </div>
                 </div>
                 <div class="text-center mt-12">
-                <a href="conheca-a-louresmolde.html" class="inline-flex items-center border-2 border-yellow-600 text-yellow-600 hover:bg-yellow-600 hover:text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+                <a href="conheca-a-louresmolde.html" class="inline-flex items-center border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white font-bold py-3 px-6 rounded-lg transition duration-300">
                         <span>Saiba mais sobre nós</span>
                         <span class="material-icons ml-2" aria-hidden="true">arrow_forward</span>
                     </a>
@@ -454,7 +455,7 @@
                     </div>
                 </div>
                 <div class="text-center mt-8">
-                    <a href="trabalhos-realizados.html" class="inline-flex items-center bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+                    <a href="trabalhos-realizados.html" class="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
                         <span>Ver Mais</span>
                         <span class="material-icons ml-2" aria-hidden="true">arrow_forward</span>
                     </a>
@@ -463,7 +464,7 @@
         </section>
 
         <!-- Contact CTA -->
-        <section class="py-20 bg-yellow-600 text-white hero-pattern" aria-labelledby="contact-heading">
+        <section class="py-20 bg-blue-600 text-white hero-pattern" aria-labelledby="contact-heading">
             <div class="container mx-auto px-4 text-center">
                 <h2 id="contact-heading" class="text-3xl md:text-4xl font-bold mb-6">Faz o teu pedido orçamento!</h2>
                 <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8 mb-8">
@@ -475,10 +476,10 @@
                     </div>
                     <div class="flex items-center">
                         <span class="material-icons mr-2" aria-hidden="true">mail</span>
-                        <a href="mailto:TODO@louresmolde.com" class="hover:underline">TODO@louresmolde.com</a>
+                        <a href="mailto:louresmolde@gmail.com" class="hover:underline">louresmolde@gmail.com</a>
                     </div>
                 </div>
-                <a href="contactos.html" class="inline-flex items-center bg-white hover:bg-gray-100 text-yellow-600 font-bold py-3 px-8 rounded-lg transition duration-300">
+                <a href="contactos.html" class="inline-flex items-center bg-white hover:bg-gray-100 text-blue-600 font-bold py-3 px-8 rounded-lg transition duration-300">
                     <span>Solicitar Orçamento</span>
                     <span class="material-icons ml-2" aria-hidden="true">arrow_forward</span>
                 </a>
@@ -492,7 +493,7 @@
             <h2 id="footer-heading" class="sr-only">Rodapé</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div>
-                    <img src="images/logo-louresmolde.png" alt="Louresmolde Logo" class="h-16 mb-4" width="222" height="64">
+                    <img src="images/logo-louresmolde.svg" alt="Louresmolde Logo" class="h-16 mb-4" width="222" height="64">
                     <div class="flex space-x-4 mb-6">
                         <a href="https://facebook.com" target="_blank" class="hover:text-yellow-400 transition-colors" aria-label="Siga-nos no Facebook">
                             <span class="material-icons" aria-hidden="true">facebook</span>
@@ -525,8 +526,8 @@
                     <h3 class="text-lg font-bold mb-4">Contacte-nos</h3>
                     <p class="mb-4">Para dúvidas ou questões contacte-nos:</p>
                     <div class="mb-4">
-                        <a href="mailto:TODO@louresmolde.com" class="flex items-center hover:text-yellow-400 transition-colors mb-2">
-                            <span class="material-icons mr-2" aria-hidden="true">mail</span> TODO@louresmolde.com
+                        <a href="mailto:louresmolde@gmail.com" class="flex items-center hover:text-yellow-400 transition-colors mb-2">
+                            <span class="material-icons mr-2" aria-hidden="true">mail</span> louresmolde@gmail.com
                         </a>
                     </div>
                     <h4 class="font-bold mb-2">Fale connosco:</h4>
