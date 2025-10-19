@@ -1,6 +1,6 @@
-# Dexcarte
+# Louresmolde
 
-A professional website for Dexcarte - Comércio de Ferro Forjado e Construções, a Portuguese metalworking company specializing in wrought iron work and metal construction.
+A professional website for Louresmolde - Construções Metálicas, a Portuguese metalworking company specializing in metal constructions.
 
 ## Features
 

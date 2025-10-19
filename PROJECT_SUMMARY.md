@@ -1,12 +1,12 @@
-# Dexcarte Website Project
+# Louresmolde Website Project
 
 ## Project Overview
 
-This is a complete website for **Dexcarte - Comércio de Ferro Forjado e Construções**, a Portuguese metalworking company specializing in wrought iron work and metal construction.
+This is a complete website for **Louresmolde - Construções Metálicas**, a Portuguese metalworking company specializing in metal constructions.
 
 ## Company Details
 
-- **Company Name**: Dexcarte - Comércio de Ferro Forjado e Construções Lda
+- **Company Name**: Louresmolde - Construções Metálicas
 - **Industry**: Metalworking, Iron Forging, Metal Construction
 - **Location**: Póvoa de Santa Iria, Forte da Casa, Portugal
 - **Language**: Portuguese (pt)
@@ -80,7 +80,7 @@ This is a complete website for **Dexcarte - Comércio de Ferro Forjado e Constru
 
 ## Project Status
 
-- **Repository**: https://github.com/Grim-hue/dexcarte.git
+- **Repository**: https://github.com/Grim-hue/louresmolde.git
 - **Branch**: main
 - **Files**: 13 total files
 - **Code Lines**: 2,165+ lines
