@@ -10,6 +10,7 @@ import Solucoes from './pages/Solucoes'
 import Catalogos from './pages/Catalogos'
 import Contactos from './pages/Contactos'
 import PedidoOrcamento from './pages/PedidoOrcamento'
+import PoliticaPrivacidade from './pages/PoliticaPrivacidade'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -21,7 +22,7 @@ function ScrollToTop() {
 
 function AppContent() {
   return (
-    <div className="min-h-screen bg-offwhite font-body text-graphite">
+    <div className="min-h-screen bg-offwhite font-body text-graphite overflow-x-hidden">
       <Header />
       <main>
         <Routes>
@@ -33,6 +34,7 @@ function AppContent() {
           <Route path="/catalogos" element={<Catalogos />} />
           <Route path="/contactos" element={<Contactos />} />
           <Route path="/pedido-orcamento" element={<PedidoOrcamento />} />
+          <Route path="/politica-privacidade" element={<PoliticaPrivacidade />} />
         </Routes>
       </main>
       <Footer />

@@ -55,14 +55,11 @@ export default function Footer() {
                 href="https://www.livroreclamacoes.pt"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-1.5 p-2 rounded-sm bg-white/5 hover:bg-white/10 transition-colors duration-150 text-xs"
-                aria-label="Livro de Reclamações"
+                className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-sm bg-white/5 hover:bg-white/10 transition-colors duration-150 text-xs text-smoke hover:text-white"
+                aria-label="Livro de Reclamações Eletrónico"
               >
-                <img
-                  src="/images/livro-reclamacoes.png"
-                  alt="Livro de Reclamações"
-                  className="h-5 w-auto"
-                />
+                <ExternalLink size={12} />
+                Livro de Reclamações
               </a>
             </div>
           </div>

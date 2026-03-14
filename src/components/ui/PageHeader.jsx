@@ -17,7 +17,7 @@ export default function PageHeader({ title, subtitle, image, className }) {
       {image && (
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${image})` }}
+          style={{ backgroundImage: `url('${image}')` }}
           aria-hidden="true"
         />
       )}

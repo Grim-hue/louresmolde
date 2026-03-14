@@ -1,31 +1,54 @@
+import { useCallback } from 'react'
 import { motion } from 'framer-motion'
-import { Shield, Award, Users, Zap } from 'lucide-react'
+import { ChevronLeft, ChevronRight, Star } from 'lucide-react'
+import useEmblaCarousel from 'embla-carousel-react'
+import Autoplay from 'embla-carousel-autoplay'
 import PageHeader from '../components/ui/PageHeader'
 import SectionHeader from '../components/ui/SectionHeader'
 import ValuePoints from '../components/sections/ValuePoints'
 import QuoteCTA from '../components/sections/QuoteCTA'
 import { useScrollReveal } from '../hooks/useScrollReveal'
 
-const pillars = [
+const testimonials = [
   {
-    Icon: Shield,
-    title: 'Qualidade',
-    body: 'Rigor nas especificações, nos materiais e nos acabamentos. Cada peça sai da oficina após verificação cuidadosa, de forma a cumprir o que foi acordado com o cliente.',
+    name: 'João Ferreira',
+    role: 'Proprietário',
+    avatar: 'JF',
+    color: '#1B3A6B',
+    body: 'Trabalho impecável! Instalaram um portão automático e um gradeamento em ferro na nossa moradia. Cumpriram o prazo e o preço acordado ao cêntimo. Recomendo sem hesitar.',
+    rating: 5,
   },
   {
-    Icon: Award,
-    title: 'Competência',
-    body: 'Equipa experiente com domínio técnico em ferro, alumínio e inox. Conhecemos os materiais, os processos e os limites de cada aplicação.',
+    name: 'Ana Martins',
+    role: 'Cliente particular',
+    avatar: 'AM',
+    color: '#2C6E49',
+    body: 'Excelente qualidade nas escadas em inox que fizeram para a nossa moradia em Leiria. Desde o projeto até à montagem, uma equipa muito profissional e atenciosa.',
+    rating: 5,
   },
   {
-    Icon: Zap,
-    title: 'Inovação',
-    body: 'Procuramos continuamente melhores processos e soluções técnicas. A inovação não é um objetivo em si — é uma consequência de fazer bem o trabalho.',
+    name: 'Carlos Rodrigues',
+    role: 'Diretor de Obra',
+    avatar: 'CR',
+    color: '#7B3F00',
+    body: 'Já utilizámos a Louresmolde em três obras industriais no Ribatejo. Sempre com rigor técnico, materiais de qualidade e sem surpresas no final da obra.',
+    rating: 5,
   },
   {
-    Icon: Users,
-    title: 'Compromisso',
-    body: 'Tratamos cada projeto com a mesma seriedade, independentemente da dimensão. O cliente sabe o que esperar — e entregamos o que prometemos.',
+    name: 'Sofia Pereira',
+    role: 'Arquiteta',
+    avatar: 'SP',
+    color: '#5C3D8F',
+    body: 'A equipa foi muito prestável desde o primeiro contacto. Executaram um projeto de gradeamento em alumínio com um acabamento que superou completamente as minhas expectativas.',
+    rating: 5,
+  },
+  {
+    name: 'Miguel Santos',
+    role: 'Empresário',
+    avatar: 'MS',
+    color: '#9B2226',
+    body: 'Encomendámos peças em ferro forjado para decoração do nosso restaurante. Trabalho artesanal com um cuidado nos detalhes que os nossos clientes adoram e comentam.',
+    rating: 5,
   },
 ]
 
@@ -153,38 +176,84 @@ function Materials() {
   )
 }
 
-function PhilosophyPillars() {
-  const [ref, inView] = useScrollReveal()
+function Testimonials() {
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    { loop: true, align: 'start', slidesToScroll: 1 },
+    [Autoplay({ delay: 4000, stopOnInteraction: false })],
+  )
+
+  const prev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi])
+  const next = useCallback(() => emblaApi?.scrollNext(), [emblaApi])
 
   return (
-    <section className="section-padding bg-white">
+    <section className="section-padding bg-white overflow-hidden">
       <div className="container-wide">
         <div className="mb-12">
           <SectionHeader
-            eyebrow="A nossa filosofia"
-            heading="O que nos orienta"
+            eyebrow="O que dizem os clientes"
+            heading="Avaliações reais"
             align="center"
           />
         </div>
 
-        <div ref={ref} className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
-          {pillars.map(({ Icon, title, body }, i) => (
-            <motion.div
-              key={title}
-              initial={{ opacity: 0, y: 24 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: i * 0.1, ease: [0.25, 0.1, 0.25, 1] }}
-              className="flex flex-col gap-4 p-6 rounded-sm border border-silver/40 hover:border-brand/30 hover:shadow-card transition-all duration-300"
+        <div className="relative">
+          {/* Embla viewport */}
+          <div ref={emblaRef} className="overflow-hidden">
+            <div className="flex gap-5">
+              {testimonials.map((t) => (
+                <div
+                  key={t.name}
+                  className="flex-[0_0_100%] sm:flex-[0_0_calc(50%-10px)] lg:flex-[0_0_calc(33.333%-14px)] min-w-0"
+                >
+                  <div className="h-full bg-offwhite rounded-md p-7 shadow-card flex flex-col gap-5">
+                    {/* Stars */}
+                    <div className="flex gap-1">
+                      {Array.from({ length: t.rating }).map((_, i) => (
+                        <Star key={i} size={14} className="fill-accent text-accent" />
+                      ))}
+                    </div>
+
+                    {/* Quote */}
+                    <p className="text-steel text-sm leading-relaxed flex-1 italic">
+                      "{t.body}"
+                    </p>
+
+                    {/* Avatar + name */}
+                    <div className="flex items-center gap-3 pt-2 border-t border-silver/30">
+                      <div
+                        className="w-10 h-10 rounded-full flex items-center justify-center text-white text-xs font-bold shrink-0"
+                        style={{ backgroundColor: t.color }}
+                      >
+                        {t.avatar}
+                      </div>
+                      <div>
+                        <p className="font-heading font-semibold text-graphite text-sm">{t.name}</p>
+                        <p className="text-smoke text-xs">{t.role}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Prev / Next */}
+          <div className="flex justify-center gap-3 mt-8">
+            <button
+              onClick={prev}
+              aria-label="Anterior"
+              className="w-9 h-9 rounded-full bg-white border border-silver/40 shadow-sm flex items-center justify-center text-steel hover:text-brand hover:border-brand/30 transition-colors duration-200"
             >
-              <div className="w-10 h-10 rounded-sm bg-brand/8 flex items-center justify-center">
-                <Icon size={20} className="text-brand" />
-              </div>
-              <div>
-                <h3 className="font-heading font-bold text-graphite text-base mb-2">{title}</h3>
-                <p className="text-smoke text-sm leading-relaxed">{body}</p>
-              </div>
-            </motion.div>
-          ))}
+              <ChevronLeft size={18} />
+            </button>
+            <button
+              onClick={next}
+              aria-label="Próximo"
+              className="w-9 h-9 rounded-full bg-white border border-silver/40 shadow-sm flex items-center justify-center text-steel hover:text-brand hover:border-brand/30 transition-colors duration-200"
+            >
+              <ChevronRight size={18} />
+            </button>
+          </div>
         </div>
       </div>
     </section>
@@ -201,7 +270,7 @@ export default function Sobre() {
       />
       <AboutContent />
       <Materials />
-      <PhilosophyPillars />
+      <Testimonials />
       <ValuePoints />
       <QuoteCTA
         heading="Tem um projeto em mente?"

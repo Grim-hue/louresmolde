@@ -32,26 +32,40 @@ export default function Header() {
     return () => window.removeEventListener('resize', onResize)
   }, [])
 
-  const headerBg = scrolled
-    ? 'bg-white/95 backdrop-blur-md shadow-sm border-b border-silver/30'
-    : 'bg-transparent'
-
-  const logoSrc = scrolled
-    ? '/images/logo louresmolde 1.png'
-    : '/images/logo louresmolde white.png'
-
   const linkColor = scrolled ? 'text-steel hover:text-graphite' : 'text-white/90 hover:text-white'
   const activeColor = scrolled ? 'text-brand font-semibold' : 'text-white font-semibold'
 
   return (
-    <header className={cn('fixed top-0 left-0 right-0 z-50 transition-all duration-300', headerBg)}>
+    <header
+      className={cn(
+        'fixed top-0 left-0 right-0 z-50 transition-[background-color,backdrop-filter,box-shadow] duration-500 ease-in-out',
+        scrolled
+          ? 'bg-white/95 backdrop-blur-md shadow-sm'
+          : 'bg-transparent',
+      )}
+    >
+      {/* Bottom border fades in separately */}
+      <div
+        className={cn(
+          'absolute inset-x-0 bottom-0 h-px bg-silver/30 transition-opacity duration-500',
+          scrolled ? 'opacity-100' : 'opacity-0',
+        )}
+      />
       <div className="container-wide">
         <div className="flex items-center justify-between h-16 md:h-20">
-          {/* Logo */}
-          <Link to="/" className="flex-shrink-0 focus-visible:outline-accent">
+          {/* Logo — crossfade between white and dark versions */}
+          <Link to="/" className="flex-shrink-0 relative focus-visible:outline-accent" style={{ height: '40px', width: '173px' }}>
             <img
-              src={logoSrc}
+              src="/images/logo louresmolde white.png"
               alt="Louresmolde – Construções Metálicas"
+              className={cn('absolute inset-0 transition-opacity duration-500', scrolled ? 'opacity-0' : 'opacity-100')}
+              style={{ height: '40px', width: '173px', objectFit: 'contain', objectPosition: 'left center' }}
+            />
+            <img
+              src="/images/logo louresmolde 1.png"
+              alt=""
+              aria-hidden="true"
+              className={cn('absolute inset-0 transition-opacity duration-500', scrolled ? 'opacity-100' : 'opacity-0')}
               style={{ height: '40px', width: '173px', objectFit: 'contain', objectPosition: 'left center' }}
             />
           </Link>
@@ -65,7 +79,7 @@ export default function Header() {
                 end={end}
                 className={({ isActive }) =>
                   cn(
-                    'px-3 py-2 text-sm font-body font-medium tracking-wide transition-colors duration-200 rounded-sm relative group',
+                    'px-3 py-2 text-sm font-body font-medium tracking-wide transition-colors duration-500 rounded-sm relative group',
                     isActive ? activeColor : linkColor,
                   )
                 }
@@ -89,7 +103,7 @@ export default function Header() {
                 'ml-4 px-4 py-2 text-sm font-semibold rounded-md transition-all duration-200 active:scale-[0.98]',
                 scrolled
                   ? 'bg-accent text-white hover:bg-accent-light'
-                  : 'bg-white/15 text-white border border-white/30 hover:bg-white/25',
+                  : 'bg-accent text-white hover:bg-accent-light',
               )}
             >
               Pedir Orçamento
@@ -99,7 +113,7 @@ export default function Header() {
           {/* Mobile toggle */}
           <button
             className={cn(
-              'md:hidden p-2 rounded-md transition-colors duration-200',
+              'md:hidden p-2 rounded-md transition-colors duration-500',
               scrolled ? 'text-graphite hover:bg-silver/20' : 'text-white hover:bg-white/10',
             )}
             onClick={() => setMobileOpen((v) => !v)}

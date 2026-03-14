@@ -9,7 +9,7 @@ export default function Catalogos() {
       <PageHeader
         title="Catálogos"
         subtitle="Descarregue os nossos catálogos de elementos metálicos em formato PDF."
-        image="/images/banner-hero.webp"
+        image="/images/banner hero 1-2880w.jpg"
       />
       <CatalogGrid groups={catalogGroups} />
       <QuoteCTA

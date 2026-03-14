@@ -4,18 +4,18 @@ export default {
   theme: {
     extend: {
       colors: {
-        graphite: '#1C1C1E',
-        steel: '#3A3A3C',
-        smoke: '#8A8A8E',
-        silver: '#D1D1D6',
-        offwhite: '#F5F5F0',
-        brand: '#1B3A6B',
-        'brand-light': '#2A528F',
-        accent: '#C05C28',
-        'accent-light': '#E8936A',
+        graphite: '#1A1A1A',
+        steel: '#2C3E50',
+        smoke: '#7A7A7A',
+        silver: '#D9D9D9',
+        offwhite: '#F9F7F5',
+        brand: '#2C3E50',
+        'brand-light': '#3D5166',
+        accent: '#D97757',
+        'accent-light': '#F4A896',
       },
       fontFamily: {
-        heading: ['Syne', 'sans-serif'],
+        heading: ['Poppins', 'sans-serif'],
         body: ['Inter', 'sans-serif'],
       },
       fontSize: {
@@ -30,11 +30,16 @@ export default {
         'smooth': 'cubic-bezier(0.25, 0.1, 0.25, 1)',
       },
       boxShadow: {
-        'card': '0 2px 20px rgba(0,0,0,0.08)',
-        'card-hover': '0 8px 40px rgba(0,0,0,0.14)',
+        'card': '0 2px 20px rgba(139, 90, 43, 0.12)',
+        'card-hover': '0 8px 40px rgba(139, 90, 43, 0.16)',
       },
       backgroundImage: {
-        'gradient-dark': 'linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.3) 100%)',
+        'gradient-dark': 'linear-gradient(180deg, rgba(26,26,26,0.55) 0%, rgba(26,26,26,0.3) 100%)',
+      },
+      borderRadius: {
+        'sm': '8px',
+        'md': '12px',
+        'lg': '16px',
       },
     },
   },

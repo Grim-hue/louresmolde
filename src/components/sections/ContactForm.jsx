@@ -31,8 +31,11 @@ const inputClass = (hasError) =>
     hasError ? 'border-red-400' : 'border-silver/50 focus:border-brand',
   )
 
+const WEB3FORMS_KEY = '5574a6e4-9198-48ca-a7c1-9c8a54779c61'
+
 export default function ContactForm({ compact = false }) {
   const [submitted, setSubmitted] = useState(false)
+  const [submitError, setSubmitError] = useState(false)
 
   const {
     register,
@@ -42,15 +45,33 @@ export default function ContactForm({ compact = false }) {
   } = useForm({ resolver: zodResolver(schema) })
 
   const onSubmit = async (data) => {
-    // In production: replace with EmailJS / Formspree / backend API call
-    // For now: build a mailto link as a basic fallback
-    const body = encodeURIComponent(
-      `Nome: ${data.name}\nEmpresa: ${data.company || '—'}\nTelefone: ${data.phone || '—'}\n\nMensagem:\n${data.message}`,
-    )
-    const subject = encodeURIComponent(`[Louresmolde] ${data.subject} — ${data.name}`)
-    window.location.href = `mailto:louresmolde@gmail.com?subject=${subject}&body=${body}`
-    setSubmitted(true)
-    reset()
+    setSubmitError(false)
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_KEY,
+          from_name: data.name,
+          subject: `[Contacto] ${data.subject} — ${data.name}`,
+          Nome: data.name,
+          Email: data.email,
+          Telefone: data.phone || '—',
+          Empresa: data.company || '—',
+          Assunto: data.subject,
+          Mensagem: data.message,
+        }),
+      })
+      const json = await res.json()
+      if (json.success) {
+        setSubmitted(true)
+        reset()
+      } else {
+        setSubmitError(true)
+      }
+    } catch {
+      setSubmitError(true)
+    }
   }
 
   if (submitted) {
@@ -149,6 +170,12 @@ export default function ContactForm({ compact = false }) {
       </div>
       {errors.consent && (
         <p className="text-xs text-red-500 -mt-3">{errors.consent.message}</p>
+      )}
+
+      {submitError && (
+        <p className="text-sm text-red-500">
+          Ocorreu um erro. Por favor tente novamente ou contacte-nos diretamente por email.
+        </p>
       )}
 
       <button

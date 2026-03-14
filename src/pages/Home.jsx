@@ -32,7 +32,7 @@ function IntroStatement() {
           </p>
           <p className="text-steel text-base md:text-lg leading-relaxed">
             Trabalhamos com ferro, alumínio e inox para criar soluções duráveis,
-            bem executadas e adaptadas a cada projeto. Há 18 anos em
+            bem executadas e adaptadas a cada projeto. Há {new Date().getFullYear() - 2006} anos em
             Carregado, ao serviço de clientes de construção civil, indústria e
             particulares que exigem qualidade sem margem para improvisos.
           </p>

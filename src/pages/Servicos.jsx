@@ -86,7 +86,7 @@ export default function Servicos() {
       <PageHeader
         title="Serviços"
         subtitle="Do portão ao corrimão, da estrutura ao detalhe — soluções metálicas à medida."
-        image="/images/service-structures.webp"
+        image="/images/banner hero 1-2880w.jpg"
       />
 
       {/* Services intro */}

@@ -112,7 +112,7 @@ export default function Contactos() {
               <div className="mt-8 rounded-sm overflow-hidden border border-silver/30 bg-silver/10 h-56">
                 <iframe
                   title="Localização Louresmolde"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3103.0!2d-8.98!3d39.01!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMznCsDAwJzM2LjAiTiA4wrA1OCc0OC4wIlc!5e0!3m2!1spt!2spt!4v1234567890"
+                  src="https://maps.google.com/maps?q=Quinta+do+Peixoto+Carregado+Park+2580-512+Carregado+Portugal&t=&z=15&ie=UTF8&iwloc=&output=embed"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}

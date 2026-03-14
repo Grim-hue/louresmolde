@@ -9,7 +9,7 @@ export default function Obras() {
       <PageHeader
         title="Obras Realizadas"
         subtitle="Uma seleção dos projetos executados em ferro, alumínio e inox."
-        image="/images/gallery-project1.webp"
+        image="/images/banner hero 2-2880w.jpg"
       />
       <ProjectGallery
         projects={projects}

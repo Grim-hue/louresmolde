@@ -39,8 +39,8 @@ export default function HeroSection() {
             initial="hidden"
             animate="visible"
             variants={fadeUp}
-            className="font-heading font-bold text-white drop-shadow-lg mb-4"
-            style={{ fontSize: 'clamp(2.8rem, 7vw, 5.5rem)', lineHeight: 1.0, letterSpacing: '0.02em' }}
+          className="font-heading font-bold text-white drop-shadow-lg mb-4"
+            style={{ fontSize: 'clamp(1.8rem, 7vw, 5.5rem)', lineHeight: 1.0, letterSpacing: '0.02em' }}
           >
             LOURESMOLDE
           </motion.h1>
@@ -62,10 +62,10 @@ export default function HeroSection() {
             initial="hidden"
             animate="visible"
             variants={fadeUp}
-            className="text-lg md:text-xl text-white leading-relaxed mb-10 max-w-3xl mx-auto bg-black/20 backdrop-blur-sm px-6 py-5 rounded-lg drop-shadow-md"
+          className="text-lg md:text-xl text-white/90 leading-relaxed mb-10 max-w-3xl mx-auto drop-shadow-md"
           >
             A arte do metal ao serviço da engenharia. Especializados na conceção,
-            fabrico e montagem de estruturas metálicas com 18 anos de experiência
+            fabrico e montagem de estruturas metálicas com {new Date().getFullYear() - 2006} anos de experiência
             em ferro, alumínio e inox.
           </motion.p>
 

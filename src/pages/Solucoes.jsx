@@ -70,7 +70,7 @@ export default function Solucoes() {
       <PageHeader
         title="Soluções"
         subtitle="Para que tipo de projetos e clientes trabalhamos."
-        image="/images/service-structures.webp"
+        image="/images/banner hero 2-2880w.jpg"
       />
 
       <section className="section-padding bg-offwhite">

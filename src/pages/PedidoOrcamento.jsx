@@ -59,8 +59,11 @@ const inputClass = (hasError) =>
     hasError ? 'border-red-400' : 'border-silver/50 focus:border-brand',
   )
 
+const WEB3FORMS_KEY = '5574a6e4-9198-48ca-a7c1-9c8a54779c61'
+
 export default function PedidoOrcamento() {
   const [submitted, setSubmitted] = useState(false)
+  const [submitError, setSubmitError] = useState(false)
 
   const {
     register,
@@ -69,25 +72,36 @@ export default function PedidoOrcamento() {
     reset,
   } = useForm({ resolver: zodResolver(schema) })
 
-  const onSubmit = (data) => {
-    const body = encodeURIComponent(
-      `Nome: ${data.name}
-Empresa: ${data.company || '—'}
-Email: ${data.email}
-Telefone: ${data.phone}
-Serviço: ${data.service}
-Tipo de obra: ${data.projectType}
-Localização: ${data.location || '—'}
-
-Descrição do projeto:
-${data.message}`,
-    )
-    const subject = encodeURIComponent(
-      `[Orçamento] ${data.service} — ${data.name}`,
-    )
-    window.location.href = `mailto:louresmolde@gmail.com?subject=${subject}&body=${body}`
-    setSubmitted(true)
-    reset()
+  const onSubmit = async (data) => {
+    setSubmitError(false)
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_KEY,
+          from_name: data.name,
+          subject: `[Orçamento] ${data.service} — ${data.name}`,
+          Nome: data.name,
+          Empresa: data.company || '—',
+          Email: data.email,
+          Telefone: data.phone,
+          Serviço: data.service,
+          'Tipo de obra': data.projectType,
+          Localização: data.location || '—',
+          'Descrição do projeto': data.message,
+        }),
+      })
+      const json = await res.json()
+      if (json.success) {
+        setSubmitted(true)
+        reset()
+      } else {
+        setSubmitError(true)
+      }
+    } catch {
+      setSubmitError(true)
+    }
   }
 
   if (submitted) {
@@ -124,7 +138,7 @@ ${data.message}`,
       <PageHeader
         title="Pedido de Orçamento"
         subtitle="Preencha o formulário com os detalhes do seu projeto. Respondemos com uma proposta sem compromissos."
-        image="/images/service-structures.webp"
+        image="/images/banner hero 1-2880w.jpg"
       />
 
       <section className="section-padding bg-offwhite">
@@ -257,10 +271,16 @@ ${data.message}`,
                     <p className="text-xs text-red-500 -mt-3">{errors.consent.message}</p>
                   )}
 
+                  {submitError && (
+                    <p className="text-sm text-red-500">
+                      Ocorreu um erro ao enviar o pedido. Por favor tente novamente ou contacte-nos por email.
+                    </p>
+                  )}
+
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="self-start inline-flex items-center gap-2 px-7 py-3.5 bg-accent hover:bg-accent-light text-white font-semibold text-sm rounded-md transition-all duration-200 active:scale-[0.98] disabled:opacity-60"
+                    className="self-start inline-flex items-center gap-2 px-7 py-3.5 bg-accent hover:bg-accent-light text-white font-semibold text-sm rounded-md transition-all duration-200 active:scale-[0.98] disabled:opacity-60 disabled:pointer-events-none"
                   >
                     {isSubmitting ? 'A enviar…' : 'Enviar Pedido'}
                     <Send size={15} />
