@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { X, ArrowRight } from 'lucide-react'
 import { useScrollReveal } from '../../hooks/useScrollReveal'
 import SectionHeader from '../ui/SectionHeader'
+import { img } from '../../lib/utils'
 import Badge from '../ui/Badge'
 import { projectCategories } from '../../data/projects'
 
@@ -45,7 +46,7 @@ function LightboxModal({ project, onClose }) {
             <X size={18} />
           </button>
           <img
-            src={project.image}
+            src={img(project.image)}
             alt={project.alt}
             className="w-full max-h-[75vh] object-contain"
           />
@@ -138,7 +139,7 @@ export default function ProjectGallery({
               aria-label={`Ver imagem: ${project.title}`}
             >
               <img
-                src={project.image}
+                src={img(project.image)}
                 alt={project.alt}
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
                 loading="lazy"

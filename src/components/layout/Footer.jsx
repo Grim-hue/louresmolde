@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { Phone, Mail, MapPin, Clock, Facebook, ExternalLink } from 'lucide-react'
+import { img } from '../../lib/utils'
 
 const navLinks = [
   { to: '/', label: 'Início' },
@@ -31,7 +32,7 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <Link to="/" className="inline-block mb-5 focus-visible:outline-accent">
               <img
-                src="/images/logo louresmolde white.png"
+                src={img('images/logo louresmolde white.png')}
                 alt="Louresmolde – Construções Metálicas"
                 style={{ height: '40px', width: 'auto' }}
               />

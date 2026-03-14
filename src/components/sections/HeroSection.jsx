@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { ArrowRight, ChevronDown } from 'lucide-react'
+import { img } from '../../lib/utils'
 
 const fadeUp = {
   hidden: { opacity: 0, y: 28 },
@@ -20,7 +21,7 @@ export default function HeroSection() {
       {/* Background image — hero-metal-sculpture.jpg (first iteration) */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/images/hero-metal-sculpture.jpg')" }}
+        style={{ backgroundImage: `url('${img('images/hero-metal-sculpture.jpg')}')` }}
         aria-hidden="true"
       />
 

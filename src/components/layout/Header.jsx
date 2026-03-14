@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { Menu, X } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { cn } from '../../lib/utils'
+import { cn, img } from '../../lib/utils'
 
 const navLinks = [
   { to: '/', label: 'Início', end: true },
@@ -56,13 +56,13 @@ export default function Header() {
           {/* Logo — crossfade between white and dark versions */}
           <Link to="/" className="flex-shrink-0 relative focus-visible:outline-accent" style={{ height: '40px', width: '173px' }}>
             <img
-              src="/images/logo louresmolde white.png"
+              src={img('images/logo louresmolde white.png')}
               alt="Louresmolde – Construções Metálicas"
               className={cn('absolute inset-0 transition-opacity duration-500', scrolled ? 'opacity-0' : 'opacity-100')}
               style={{ height: '40px', width: '173px', objectFit: 'contain', objectPosition: 'left center' }}
             />
             <img
-              src="/images/logo louresmolde 1.png"
+              src={img('images/logo louresmolde 1.png')}
               alt=""
               aria-hidden="true"
               className={cn('absolute inset-0 transition-opacity duration-500', scrolled ? 'opacity-100' : 'opacity-0')}

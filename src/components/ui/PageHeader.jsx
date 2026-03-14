@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { cn } from '../../lib/utils'
+import { cn, img } from '../../lib/utils'
 
 /**
  * Full-width page header used at the top of interior pages.
@@ -17,7 +17,7 @@ export default function PageHeader({ title, subtitle, image, className }) {
       {image && (
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url('${image}')` }}
+          style={{ backgroundImage: `url('${img(image)}')` }}
           aria-hidden="true"
         />
       )}

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
 import { useScrollReveal } from '../../hooks/useScrollReveal'
 import SectionHeader from '../ui/SectionHeader'
+import { img } from '../../lib/utils'
 
 const cardVariants = {
   hidden: { opacity: 0, y: 32 },
@@ -28,7 +29,7 @@ function ServiceCard({ service, index }) {
       {/* Image */}
       <div className="aspect-service overflow-hidden bg-silver/20">
         <img
-          src={service.image}
+          src={img(service.image)}
           alt={service.name}
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
           loading="lazy"

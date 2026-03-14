@@ -5,6 +5,7 @@ import useEmblaCarousel from 'embla-carousel-react'
 import Autoplay from 'embla-carousel-autoplay'
 import PageHeader from '../components/ui/PageHeader'
 import SectionHeader from '../components/ui/SectionHeader'
+import { img } from '../lib/utils'
 import ValuePoints from '../components/sections/ValuePoints'
 import QuoteCTA from '../components/sections/QuoteCTA'
 import { useScrollReveal } from '../hooks/useScrollReveal'
@@ -106,7 +107,7 @@ function AboutContent() {
           >
             <div className="aspect-[4/3] rounded-sm overflow-hidden bg-silver/20">
               <img
-                src="/images/hero-metal-sculpture.jpg"
+                src={img('images/hero-metal-sculpture.jpg')}
                 alt="Trabalho de construção metálica da Louresmolde"
                 className="w-full h-full object-cover"
               />
