@@ -44,7 +44,7 @@ function AppContent() {
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/louresmolde">
       <ScrollToTop />
       <AppContent />
     </BrowserRouter>
