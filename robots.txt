@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://louresmolde.github.io/louresmolde/sitemap.xml
