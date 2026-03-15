@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://louresmolde.github.io/louresmolde/sitemap.xml
+Sitemap: https://grim-hue.github.io/louresmolde/sitemap.xml

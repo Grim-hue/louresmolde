@@ -114,7 +114,7 @@ function AboutContent() {
             </div>
             {/* Stat badge */}
             <div className="absolute -bottom-5 -left-5 bg-brand text-white p-5 rounded-sm shadow-lg">
-              <p className="font-heading font-bold text-3xl">18+</p>
+              <p className="font-heading font-bold text-3xl">31+</p>
               <p className="text-white/70 text-xs mt-0.5">anos de experiência</p>
             </div>
           </motion.div>

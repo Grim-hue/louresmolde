@@ -29,7 +29,7 @@ export default defineConfig({
           '/pedido-orcamento',
           '/politica-privacidade',
         ]
-        const baseUrl = 'https://louresmolde.github.io/louresmolde'
+        const baseUrl = 'https://grim-hue.github.io/louresmolde'
         const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${routes.map(route => `  <url>

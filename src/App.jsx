@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, useLocation, Navigate } from 'react-router-dom'
 import { useEffect, lazy, Suspense } from 'react'
 import Header from './components/layout/Header'
 import Footer from './components/layout/Footer'
@@ -45,6 +45,7 @@ function AppContent() {
             <Route path="/contactos" element={<Contactos />} />
             <Route path="/pedido-orcamento" element={<PedidoOrcamento />} />
             <Route path="/politica-privacidade" element={<PoliticaPrivacidade />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </Suspense>
       </main>

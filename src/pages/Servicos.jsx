@@ -6,6 +6,7 @@ import SectionHeader from '../components/ui/SectionHeader'
 import QuoteCTA from '../components/sections/QuoteCTA'
 import { useScrollReveal } from '../hooks/useScrollReveal'
 import { services } from '../data/services'
+import { img } from '../lib/utils'
 
 function ServiceBlock({ service, index }) {
   const [ref, inView] = useScrollReveal()
@@ -67,7 +68,7 @@ function ServiceBlock({ service, index }) {
           >
             <div className="aspect-service rounded-sm overflow-hidden bg-silver/20">
               <img
-                src={service.image}
+                src={img(service.image)}
                 alt={service.name}
                 className="w-full h-full object-cover"
                 loading="lazy"

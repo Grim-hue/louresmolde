@@ -1,12 +1,10 @@
 import HeroSection from '../components/sections/HeroSection'
 import ServicesGrid from '../components/sections/ServicesGrid'
-import ValuePoints from '../components/sections/ValuePoints'
-import ProjectGallery from '../components/sections/ProjectGallery'
 import IndustriesGrid from '../components/sections/IndustriesGrid'
 import ProcessSteps from '../components/sections/ProcessSteps'
 import QuoteCTA from '../components/sections/QuoteCTA'
+import { LandingAccordionItem } from '../components/ui/InteractiveImageAccordion'
 import { services } from '../data/services'
-import { featuredProjects } from '../data/projects'
 import { motion } from 'framer-motion'
 import { useScrollReveal } from '../hooks/useScrollReveal'
 
@@ -48,13 +46,7 @@ export default function Home() {
       <HeroSection />
       <IntroStatement />
       <ServicesGrid services={services} limit={4} />
-      <ValuePoints />
-      <ProjectGallery
-        projects={featuredProjects}
-        featured
-        title="Alguns dos nossos projetos"
-        subtitle="Uma seleção do trabalho realizado em ferro, alumínio e inox."
-      />
+      <LandingAccordionItem />
       <IndustriesGrid compact />
       <ProcessSteps />
       <QuoteCTA />
