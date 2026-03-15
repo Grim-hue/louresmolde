@@ -4,6 +4,7 @@ import IndustriesGrid from '../components/sections/IndustriesGrid'
 import ProcessSteps from '../components/sections/ProcessSteps'
 import QuoteCTA from '../components/sections/QuoteCTA'
 import { LandingAccordionItem } from '../components/ui/InteractiveImageAccordion'
+import { ValuePointsCards } from '../components/sections/ValuePoints'
 import { services } from '../data/services'
 import { motion } from 'framer-motion'
 import { useScrollReveal } from '../hooks/useScrollReveal'
@@ -46,6 +47,7 @@ export default function Home() {
       <HeroSection />
       <IntroStatement />
       <ServicesGrid services={services} limit={4} />
+      <ValuePointsCards />
       <LandingAccordionItem />
       <IndustriesGrid compact />
       <ProcessSteps />
