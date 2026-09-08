@@ -1,8 +1,12 @@
 name: Deploy to GitHub Pages
 
+# GitHub Pages is the live host. The CNAME file in the build output
+# points the published site at louresmolde.com, which lets the domain
+# keep its existing nameservers and mail records untouched.
 on:
   push:
     branches: [main]
+  workflow_dispatch:
 
 permissions:
   contents: read

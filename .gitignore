@@ -1,0 +1,16 @@
+# Dependencies
+node_modules/
+
+# Build output (CI builds this from source)
+dist/
+
+# Editor / tooling
+.kombai/
+.DS_Store
+*.log
+
+# Stray files that must never be published to the live site.
+# `images/` is copied wholesale into dist/ by vite-plugin-static-copy,
+# so anything dropped in there becomes publicly downloadable.
+images/*.eml
+images/*.zip

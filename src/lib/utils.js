@@ -8,7 +8,8 @@ export function cn(...classes) {
 
 /**
  * Prepend Vite's base URL to asset paths so they resolve correctly
- * both locally (base = '/') and on GitHub Pages (base = '/louresmolde/').
+ * Kept for portability if the site is ever served from a sub-path again;
+ * with a custom domain BASE_URL is simply '/'.
  */
 export const img = (path) =>
   `${import.meta.env.BASE_URL}${String(path).replace(/^\//, '')}`
