@@ -1,8 +1,12 @@
 name: Deploy to GitHub Pages
 
+# Cloudflare Pages is the live host. This workflow is kept as a manual
+# fallback only - if it ran on push it would publish the CNAME file and
+# GitHub Pages would seize louresmolde.com as its own custom domain.
 on:
-  push:
-    branches: [main]
+  workflow_dispatch:
+  # push:
+  #   branches: [main]
 
 permissions:
   contents: read
