@@ -5,7 +5,7 @@ import fs from 'fs'
 import path from 'path'
 
 export default defineConfig({
-  base: '/louresmolde/',
+  base: '/',
   plugins: [
     react(),
     viteStaticCopy({
@@ -13,6 +13,8 @@ export default defineConfig({
         { src: 'images', dest: '.' },
         { src: 'catalogos', dest: '.' },
         { src: 'robots.txt', dest: '.' },
+        { src: 'CNAME', dest: '.' },
+        { src: '_redirects', dest: '.' },
       ],
     }),
     {
@@ -29,7 +31,7 @@ export default defineConfig({
           '/pedido-orcamento',
           '/politica-privacidade',
         ]
-        const baseUrl = 'https://grim-hue.github.io/louresmolde'
+        const baseUrl = 'https://louresmolde.com'
         const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${routes.map(route => `  <url>
@@ -39,6 +41,12 @@ ${routes.map(route => `  <url>
   </url>`).join('\n')}
 </urlset>`
         fs.writeFileSync(path.join(process.cwd(), 'dist', 'sitemap.xml'), sitemap)
+        // SPA fallback: static hosts serve 404.html for unknown paths (e.g. /obras),
+        // letting react-router take over on deep links and refreshes.
+        fs.copyFileSync(
+          path.join(process.cwd(), 'dist', 'index.html'),
+          path.join(process.cwd(), 'dist', '404.html')
+        )
       },
     },
     {
